@@ -15,9 +15,9 @@ content = r.text
 
 soup = BeautifulSoup(content, 'lxml') 
 
-TOKEN = "871956208:AAHisfa3fJKMl6l6ODvD8dbwpiw97gIfuw8"
+TOKEN = ""
 bot = telepot.Bot(TOKEN)
-#time.sleep(100)
+time.sleep(100)
 db = pymysql.connect("db","william","william","TESTDB" )
 cursor = db.cursor()
 cursor.execute("DROP TABLE IF EXISTS EMPLOYEE")
