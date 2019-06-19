@@ -1,0 +1,40 @@
+# Use root/example as user/password credentials
+version: '3.3'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: william
+      MYSQL_USER: william
+      MYSQL_PASSWORD: william
+      MYSQL_DATABASE: TESTDB
+    volumes:
+      - "/Users/mouzhanyou/Documents/nthu_bot/docker/mysql/data/db:/var/lib/mysql"
+      - "/Users/mouzhanyou/Documents/nthu_bot/docker/mysql/data/conf:/etc/mysql/conf.d"  
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  
+  pythont5:
+    build: docker/tgchannel/
+    restart: always
+    networks: 
+      - mysql
+    depends_on:
+      - db
+    tty: true
+    command: python nthu_ipth.py
+    links: 
+      - "db"
+      - "db:database"
+
+networks:
+  mysql:
+    driver: bridge
