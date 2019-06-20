@@ -13,8 +13,8 @@ services:
       MYSQL_PASSWORD: william
       MYSQL_DATABASE: TESTDB
     volumes:
-      - "/Users/mouzhanyou/Documents/nthu_bot/docker/mysql/data/db:/var/lib/mysql"
-      - "/Users/mouzhanyou/Documents/nthu_bot/docker/mysql/data/conf:/etc/mysql/conf.d"  
+      - "./docker/mysql/data/db:/var/lib/mysql"
+      - "./docker/mysql/data/conf:/etc/mysql/conf.d"  
     networks:
       - mysql
 
@@ -28,13 +28,13 @@ services:
 
   python_channel:
     build: docker/tgchannel/
-    restart: always
     networks: 
       - mysql
     depends_on:
       - db
-    tty: true
     command: python nthu_ipth.py
+    environment:
+      - TELEPOT_TOKEN=${TELEPOT_TOKEN}
 
 networks:
   mysql:
