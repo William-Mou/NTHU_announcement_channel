@@ -3,7 +3,7 @@ version: '3.3'
 
 services:
 
-  mysql:
+  db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -15,27 +15,26 @@ services:
     volumes:
       - "/Users/mouzhanyou/Documents/nthu_bot/docker/mysql/data/db:/var/lib/mysql"
       - "/Users/mouzhanyou/Documents/nthu_bot/docker/mysql/data/conf:/etc/mysql/conf.d"  
-    ports:
-      - 3306:3306
+    networks:
+      - mysql
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
-  
+    networks:
+      - mysql  
+
   python_channel:
     build: docker/tgchannel/
     restart: always
     networks: 
       - mysql
     depends_on:
-      - mysql
+      - db
     tty: true
     command: python nthu_ipth.py
-    links: 
-      - "mysql"
-      - "mysql:database"
 
 networks:
   mysql:
