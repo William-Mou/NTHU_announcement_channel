@@ -32,7 +32,7 @@ services:
       - mysql
     depends_on:
       - db
-    command: python nthu_ipth.py
+    command: python run.py
     environment:
       - TELEPOT_TOKEN=${TELEPOT_TOKEN}
 
