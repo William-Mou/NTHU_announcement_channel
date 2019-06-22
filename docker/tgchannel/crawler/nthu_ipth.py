@@ -57,11 +57,11 @@ for announce in tables:
             db.commit()
         except:
             db.rollback()
-        #try:
-        bot.sendMessage(-1001429244108, news.string + "\n" + news.get('href') )
-        print("新增一筆新的文章：", news.string)
-        #except:
-        #    print("time out :", news.string )
+        try:
+            bot.sendMessage(-1001429244108, news.string + "\n" + news.get('href') )
+            print("新增一筆新的文章：", news.string)
+        except:
+            print("time out :", news.string )
     else:
         print("沒有新的文章了")
 db.close()
