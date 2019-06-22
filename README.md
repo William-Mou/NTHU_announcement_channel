@@ -30,13 +30,8 @@ docker-compose up --build --remove-orphans --abort-on-container-exit
 
 server flows
 ---
-```sequence
-python -> MySQL: 查詢公告已儲存？
-Note right of MySQL: 如果未儲存
-MySQL -> python: 回覆公告不存在
-Note left of python: 推播 TG Channel
-python -> MySQL: 儲存當筆新公告
-```
+![](https://i.imgur.com/FzozhTL.png)
+
 
 ## Appendix and FAQ
 
