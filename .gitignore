@@ -2,8 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
 *.env
 .docker-compose.yml.swp
+.vscode/settings.json
 
 # C extensions
 *.so
