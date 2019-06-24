@@ -1,6 +1,9 @@
 import os 
-for root, dirs, files in os.walk("./crawler"):
-    for f in files:
-        fullpath = os.path.join(root, f)
-        if fullpath[-3:] == ".py":
-            os.system("python " + fullpath)
+import time
+print("run.py")
+for f in os.listdir("/usr/src/app/crawler"):
+    print(f)
+    if f[-3:] == ".py":
+        print("Excute : python " + f)
+        os.system("python crawler/" + f)
+

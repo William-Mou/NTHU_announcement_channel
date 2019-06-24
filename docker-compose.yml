@@ -17,6 +17,7 @@ services:
       - "./docker/mysql/data/conf:/etc/mysql/conf.d"  
     networks:
       - mysql
+
 #command: mysql -u root -pwilliam -e "use mysql; update user set host = '%' where user = 'william'  and host='localhost';"
 
   adminer:
@@ -24,8 +25,6 @@ services:
     restart: always
     ports:
       - 8080:8080
-    networks:
-      - mysql  
 
   python_channel:
     build: docker/tgchannel/
