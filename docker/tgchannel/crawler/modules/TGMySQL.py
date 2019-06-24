@@ -29,8 +29,8 @@ class TGMySQL:
         except:
             print("找到資料表：%s" % tableName)
 
-    def check_SQL(self, title):
-        sql = "SELECT count( * ) FROM `NTHU_IPTH` WHERE `TITLE` = '%s'" % title
+    def check_SQL(self, tableName, title):
+        sql = "SELECT count( * ) FROM `%s` WHERE `TITLE` = '%s'" % (tableName, title)
         self.cursor.execute(sql)
         result = self.cursor.fetchone()[0]
         if result == 0:

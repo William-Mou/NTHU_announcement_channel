@@ -16,7 +16,7 @@ def send_msg(title, link):
 
 def main():
     SQL = TGMySQL.TGMySQL()
-    SQL.connect_SQL("NTHU_ipth")
+    SQL.connect_SQL("NTHU_IPTH")
 
     tables = Crawler.Crawler()
 
@@ -26,7 +26,7 @@ def main():
         title = str(news.string)
         link = str(news.get('href'))
 
-        nonexistent = SQL.check_SQL(title)
+        nonexistent = SQL.check_SQL("NTHU_IPTH", title)
         if nonexistent:
             SQL.insert_SQL(title, link, str(data).split()[1])
             send_msg(title, link)
