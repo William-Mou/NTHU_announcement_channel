@@ -2,11 +2,11 @@ from modules import Crawler
 from modules import TGMySQL
 import telepot
 import os
-import pymysql
+
 
 def send_msg(title, link):
     bot = telepot.Bot(os.environ["TELEPOT_TOKEN"])
-    
+
     try:
         bot.sendMessage(-1001429244108, title + "\n" + link)
         print("新增一筆新的文章：", title)
@@ -15,8 +15,6 @@ def send_msg(title, link):
 
 
 def main():
-    # 遍歷並通知
-    #db = pymysql.connect("db","william","william","TESTDB" )
     SQL = TGMySQL.TGMySQL()
     SQL.connect_SQL("NTHU_ipth")
 
@@ -30,10 +28,12 @@ def main():
 
         nonexistent = SQL.check_SQL(title)
         if nonexistent:
-            SQL.insert_SQL(title, link, str(data).split()[1] )
+            SQL.insert_SQL(title, link, str(data).split()[1])
             send_msg(title, link)
         else:
             print("沒有新的文章了")
+
+    SQL.close_SQL()
 
 
 if __name__ == "__main__":
