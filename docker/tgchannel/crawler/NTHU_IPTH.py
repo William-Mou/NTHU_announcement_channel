@@ -1,4 +1,3 @@
-from modules import Crawler
 from modules import TGMySQL
 import telepot
 import os
