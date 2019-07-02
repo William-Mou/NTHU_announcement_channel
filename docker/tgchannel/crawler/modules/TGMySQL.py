@@ -21,20 +21,21 @@ class TGMySQL:
 
     def connect_SQL(self):
         sql = """CREATE TABLE %s(
-            TITLE  CHAR(80) NOT NULL,
+            TITLE  CHAR(255) NOT NULL,
             OFFICE  CHAR(40),
-            LINK  CHAR(200),
-            DATA CHAR(20))
+            LINK  varchar(500),
+            DATA CHAR(40))
             """ % self.tableName
         try:
             self.cursor.execute(sql)
+            
         except:
+            self.db.rollback()
             print("找到資料表：%s" % self.tableName)
 
     def check_SQL(self, title):
         print(self.tableName)
         sql = "SELECT count( * ) FROM `%s` WHERE `TITLE` = '%s'" % (self.tableName, title)
-        print(sql)
         self.cursor.execute(sql)
         result = self.cursor.fetchone()[0]
         if result == 0:
@@ -45,6 +46,7 @@ class TGMySQL:
     def insert_SQL(self, TITLE, OFFICE, LINK, DATA):
         sql = "INSERT INTO %s(TITLE, OFFICE, LINK, DATA) VALUES ('%s', '%s', '%s', '%s')" % (
             self.tableName, TITLE, OFFICE, LINK, DATA)
+        print(sql)
         try:
             self.cursor.execute(sql)
             self.db.commit()

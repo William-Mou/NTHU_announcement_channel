@@ -36,7 +36,7 @@ services:
       - db
     command: python run.py
     environment:
-      - TELEPOT_TOKEN=${TELEPOT_TOKEN}
+      TELEPOT_TOKEN: 871956208:AAHisfa3fJKMl6l6ODvD8dbwpiw97gIfuw8
 
 networks:
   mysql:
