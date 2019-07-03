@@ -6,7 +6,7 @@ NTHU Announcement Channel
 * NTHU Announcement Channel
   * Table of Contents
   * Beginners Guide
-  * server flows
+  * To Developers
   * Appendix and FAQ
   
 ## Beginners Guide
