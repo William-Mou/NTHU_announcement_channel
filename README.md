@@ -19,7 +19,7 @@ git clone https://github.com/William-Mou/NTHU_announcement_channel.git
 ```
 2. 進入專案資料夾，並設置你的 TOKEN 為環境變數
 ```shell
-cd NTHU_announcement_channel && export TLELPOT_TOKEN='your_Telegram_bot_TOKEN'
+cd NTHU_announcement_channel && export TELEPOT_TOKEN='your_Telegram_bot_TOKEN'
 ```
 3. Docker-compose 指令，自動部署 db 與 python 程式
 ``` shell
