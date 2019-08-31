@@ -73,7 +73,7 @@ docker-compose up --build --remove-orphans --abort-on-container-exit
 
 ### If you want to write something...
 
-1. Make your target_links as a json file, and put it down ```docker/tgchannel/resource``` folder.
+1. Make your target_links as a json file, and put it down ```docker/tgchannel/crawler/resource``` folder.
 
 2. Writing a ```SCHOOL_DEPARTMENT.py``` , you could import SQL functions by ```from modules import TGMySQL```.
 
