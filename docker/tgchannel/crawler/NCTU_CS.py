@@ -29,14 +29,18 @@ def crawler(office, ta_link, SQL):
             title =  announce.find_all("a")[0].string.split()[0]
             link = announce.find_all("a")[0]['href']
             data = announce.find_all("span")
-            data = str(data).split("\n")[4].split()[0]     
+            data = str(data).split("\n")[-2].split()[0]
+            
+            print(title)
+            print(link)
+            print(data)
             if type(data) == None:
                 data = None
             else:
                 data = data
         except:
             pass
-        
+
         nonexistent = SQL.check_SQL(title)
         if nonexistent:
             SQL.insert_SQL(title, office, link, data)
