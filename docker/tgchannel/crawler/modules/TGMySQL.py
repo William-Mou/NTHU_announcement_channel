@@ -36,8 +36,10 @@ class TGMySQL:
     def check_SQL(self, title):
         print(self.tableName)
         sql = "SELECT count( * ) FROM `%s` WHERE `TITLE` = '%s'" % (self.tableName, title)
-        self.cursor.execute(sql)
+        print(sql)
+        self.cursor.execute(sql.lstrip())
         result = self.cursor.fetchone()[0]
+        print(result)
         if result == 0:
             return True
         else:
