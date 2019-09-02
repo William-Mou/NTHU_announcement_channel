@@ -32,7 +32,7 @@ def crawler(office, ta_link, SQL):
             if type(data) == None:
                 data = None
             else:
-                data = data.string.split()[1]
+                data = data
         except:
             pass
         
