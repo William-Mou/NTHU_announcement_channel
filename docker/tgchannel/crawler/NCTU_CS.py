@@ -21,6 +21,7 @@ def crawler(office, ta_link, SQL):
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'lxml')
     tables = soup.find_all(class_="announcement-item")
+    #print(tables)
 
     for announce in tables:
         try:
