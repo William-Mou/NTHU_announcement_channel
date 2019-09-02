@@ -48,7 +48,7 @@ def main():
     SQL = TGMySQL.TGMySQL(file_name)
     SQL.connect_SQL()
 
-    with open('/usr/src/app/crawler/resource/nthu_cs.json' , 'r') as reader:
+    with open('/usr/src/app/crawler/resource/nctu_cs.json' , 'r') as reader:
         jf = json.loads(reader.read())
 
     for key in jf:
