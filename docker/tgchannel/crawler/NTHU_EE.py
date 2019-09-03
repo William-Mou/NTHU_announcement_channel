@@ -23,6 +23,7 @@ def crawler(office, ta_link, SQL):
     for announce in tables:
         try:
             title = announce.find(class_ = 'ptname').a.string
+            title = str(title).strip()
             link = announce.find(class_ = 'ptname').a.get('href')
             data = announce.find(class_ = 'date')
             if type(data) == None:

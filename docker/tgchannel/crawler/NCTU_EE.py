@@ -24,7 +24,7 @@ def crawler(office, ta_link, SQL):
         announce = tables[i]
         data = datas[i]
         try:
-            title = str(announce.string).lstrip()
+            title = str(announce.string).strip()
             print("NCTU_EE:",title)
             link = "https://www.dece.nctu.edu.tw/"
             link += str(announce.get("href"))
