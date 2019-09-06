@@ -26,7 +26,7 @@ def crawler(office, ta_link, SQL):
     for announce in tables:
         try:
             #print(announce)
-            title = announce.find_all("a")[0].string.split()[0]
+            title = str(announce.find_all("a")[0].string).strip()
             title = str(title).strip()
             link = announce.find_all("a")[0]['href']
             data = announce.find_all("span")
