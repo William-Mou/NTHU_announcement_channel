@@ -8,13 +8,13 @@ import requests
 from bs4 import BeautifulSoup
 
 def send_msg(office, title, link):
-    #print(os.environ["TELEPOT_TOKEN"]=="863828685:AAFKvxUy1bY93Q2MCS1135DT87wH6pvSVlA")
-    bot = telepot.Bot(os.environ["TELEPOT_TOKEN"])
-    try:
-        bot.sendMessage( -1001384935422,  office + "公告：\n" + title +  "\n" + link)
-        print("新增一筆新的文章：", title)
-    except:
-        print("time out :", title)
+    TOKEN = "863828685:AAFKvxUy1bY93Q2MCS1135DT87wH6pvSVlA"
+    bot = telepot.Bot(TOKEN)
+#try:
+    bot.sendMessage( -1001384935422,  office + "公告：\n" + title +  "\n" + link)
+    print("新增一筆新的文章：", title)
+#except:
+#    print("time out :", title)
 
 def crawler(office, ta_link, SQL):
     r = requests.get(ta_link)
