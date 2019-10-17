@@ -1,30 +1,43 @@
 NTHU Announcement Channel
 ===
 
-## Table of Contents
+**!!Warning!! Alpha Version**
 
-* NTHU Announcement Channel
-  * Table of Contents
-  * Beginners Guide
-  * To Developers
-  * Appendix and FAQ
+## issue
+
+- some crawlers has problems.
+- crawl command use dangerous eval, which could lead security issue.
+
   
 ## Beginners Guide
 
 If you are a total beginner to this, start here!
 
-1. 下載此專案至你的電腦
-```shell
-git clone https://github.com/William-Mou/NTHU_announcement_channel.git
+```bash
+#建立虛擬環境
+python3 -m venv venv
+
+#啓用虛擬環境
+source venv/bin/activate
+
+#安裝必要套件
+pip install -r requirements.txt
+
+#建立資料表
+python3 manage.py migrate
+
+#開始爬蟲
+python3 manage.py crawl nthu
+python3 manage.py crawl nctu
+
+#查看資料
+# 建議使用 DB Browser for SQLite 去檢視 `db.sqlite3` 這個檔案
+
+#清空資料庫 table
+python3 manage.py clean_tables News
+
 ```
-2. 進入專案資料夾，並設置你的 TOKEN 為環境變數
-```shell
-cd NTHU_announcement_channel && export TELEPOT_TOKEN='your_Telegram_bot_TOKEN'
-```
-3. Docker-compose 指令，自動部署 db 與 python 程式
-``` shell
-docker-compose up --build --remove-orphans --abort-on-container-exit
-```
+
 
 ## To Developers
 ---
@@ -33,51 +46,13 @@ docker-compose up --build --remove-orphans --abort-on-container-exit
 
 ![](https://i.imgur.com/FzozhTL.png)
 
-### Project Tree
-
-```
-.
-├── README.md
-├── docker  (what container or image need )
-│   ├── mysql   (mysql container volumed file)
-│   │   └── data
-│   │       ├── db   (database)
-│   │       └── conf
-│   └── tgchannel   (building pythob image needed)
-│       ├── crawler   (University announcement crawler.py)
-│       │   ├── NTHU_CS.py
-│       │   ├── NTHU_EE.py
-│       │   ├── NTHU_IPTH.py
-│       │   ├── modules
-│       │   │   ├── TGMySQL.py
-│       │   │   ├── __init__.py
-│       │   │   └── __pycache__
-│       │   │       ├── TGMySQL.cpython-36.pyc
-│       │   │       └── __init__.cpython-36.pyc
-│       │   ├── not_in_used
-│       │   │   └── nthu_ipth.py
-│       │   └── resource   (University announcement link.json)
-│       │       ├── nthu_cs.json
-│       │       ├── nthu_ee.json
-│       │       └── nthu_ipth.json
-│       ├── dockerfile
-│       ├── requirements.txt
-│       └── run.py   (excute all crawler.py when docker run container)
-├── docker-compose.yml
-├── jupyter_notebook_test   (test some new features (like my playground) )
-│   ├── nthu_cs.ipynb
-│   └── nthu_ee_cs.json
-├── todo_list.md
-└── tree   (this graphic)
-```
 
 ### If you want to write something...
 
-1. Make your target_links as a json file, and put it down ```docker/tgchannel/crawler/resource``` folder.
-
-2. Writing a ```SCHOOL_DEPARTMENT.py``` , you could import SQL functions by ```from modules import TGMySQL```.
-
-3. Just that, have fun ! Pull requests are welcome 🙏 ~
+1. Add school/department:
+    - in `backend/` dir, please modify the `crawl.py`, `schools.py`, `url_list.py`.
+2. Add new command:
+    - in `backend/management/commands` dir, please add a new one.
 
 ## Appendix and FAQ
 

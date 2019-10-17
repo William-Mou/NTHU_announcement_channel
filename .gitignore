@@ -253,3 +253,5 @@ dmypy.json
 
 # mySQL_data
 db/
+
+.idea/
