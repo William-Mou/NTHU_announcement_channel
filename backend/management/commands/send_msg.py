@@ -1,13 +1,17 @@
 from django.core.management.base import BaseCommand, CommandError
+from backend.models import News
+from backend.MSG import line, tg
+from time import sleep
 
 
 class Command(BaseCommand):
-    help = 'Closes the specified poll for voting'
-
-    def add_arguments(self, parser):
-        parser.add_argument('deps', nargs='+', type=str)
+    help = 'Send message which is not published.'
 
     def handle(self, *args, **options):
         """ Not complete!!! """
-        print("Do nothing, Not complete")
-        pass
+        news_list = News.objects.get_not_published()
+        for news in news_list:
+            tg.send_msg(news.dep, news.title, news.url)
+            line.send_msg(news.dep, news.title, news.url)
+            # 避免太頻繁發送被 ban
+            sleep(5)

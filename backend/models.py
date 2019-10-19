@@ -12,6 +12,10 @@ class NewsManager(models.Manager):
         else:
             News.objects.create(school=school, dep=dep, category=category, title=title, url=url)
 
+    @staticmethod
+    def get_not_published():
+        return News.objects.filter(published=False)
+
 
 class News(models.Model):
     school = models.CharField(max_length=50, verbose_name='學校')
@@ -25,3 +29,5 @@ class News(models.Model):
 
     objects = NewsManager()
 
+    def __str__(self):
+        return f"{self.school} {self.dep} {self.title} {self.published}"

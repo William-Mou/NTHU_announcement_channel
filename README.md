@@ -1,7 +1,7 @@
 NTHU Announcement Channel
 ===
 
-**!!Warning!! Alpha Version**
+**!!Warning!! Beta Version**
 
 ## issue
 
@@ -22,6 +22,12 @@ source venv/bin/activate
 
 #安裝必要套件
 pip install -r requirements.txt
+
+#開發時建議安裝套件
+pip install ipython
+
+#新增 .env
+cp .env-example .env
 
 #建立資料表
 python3 manage.py migrate
