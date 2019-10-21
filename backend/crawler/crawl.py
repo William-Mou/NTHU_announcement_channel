@@ -15,9 +15,7 @@ def NTHU_CS(office, ta_link):
             title = str(title).strip()
             url = announce.find(class_='ptname').a.get('href')
             data = announce.find(class_='date')
-            if type(data) == None:
-                data = None
-            else:
+            if data is not None:
                 data = data.string.split()[1]
             print(title)
             News.objects.add(school='NTHU', dep='CS', category=office, title=title, url=url)
@@ -37,9 +35,7 @@ def NTHU_EE(office, ta_link):
             title = str(title).strip()
             url = announce.find(class_='ptname').a.get('href')
             data = announce.find(class_='date')
-            if type(data) == None:
-                data = None
-            else:
+            if data is not None:
                 data = data.string.split()[1]
             print(title)
             News.objects.add(school='NTHU', dep='EE', category=office, title=title, url=url)
