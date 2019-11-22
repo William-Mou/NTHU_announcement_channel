@@ -8,8 +8,9 @@ import requests
 from bs4 import BeautifulSoup
 
 def send_msg(office, title, link):
-    TOKEN = "863828685:AAFKvxUy1bY93Q2MCS1135DT87wH6pvSVlA"
-    bot = telepot.Bot(TOKEN)
+    # TOKEN = "863828685:AAFKvxUy1bY93Q2MCS1135DT87wH6pvSVlA"
+    # bot = telepot.Bot(TOKEN)
+    bot = telepot.Bot(os.environ["TELEPOT_TOKEN"])
 #try:
     bot.sendMessage( -1001384935422,  office + "公告：\n" + title +  "\n" + link)
     print("新增一筆新的文章：", title)

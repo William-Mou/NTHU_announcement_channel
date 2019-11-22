@@ -18,14 +18,14 @@ def crawler(office, ta_link, SQL):
     r = requests.get(ta_link)
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'lxml')
-    tables = soup.find_all(class_="mc")
+    tables = soup.find_all(class_="mbox")
 
     for announce in tables:
         try:
-            title = announce.find(class_ = 'ptname').a.string
+            title = announce.find(class_ = 'mtitle').a.string
             title = str(title).strip()
-            link = announce.find(class_ = 'ptname').a.get('href')
-            data = announce.find(class_ = 'date')
+            link = announce.find(class_ = 'mtitle').a.get('href')
+            data = announce.find(class_ = 'mdate before')
             if type(data) == None:
                 data = None
             else:
