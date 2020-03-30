@@ -1,6 +1,8 @@
 NTHU Announcement Channel
 ===
 
+> For Django
+
 ## Table of Contents
 
 * NTHU Announcement Channel
