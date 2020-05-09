@@ -1,0 +1,84 @@
+{
+  "NTHU": {
+    "abbr": "清大",
+    "dep": {
+      "CS": {
+        "abbr": "資工",
+        "url": {
+          "得獎": "http://web.cs.nthu.edu.tw/files/40-1015-109-1.php?Lang=zh-tw",
+          "演講": "http://web.cs.nthu.edu.tw/files/40-1015-67-1.php?Lang=zh-tw",
+          "獎學金": "http://web.cs.nthu.edu.tw/files/40-1015-2132-1.php",
+          "競賽": "http://web.cs.nthu.edu.tw/files/40-1015-3304-1.php?Lang=zh-tw",
+          "行事曆": "http://web.cs.nthu.edu.tw/files/40-1015-794-1.php?Lang=zh-tw",
+          "清華資工新聞": "http://web.cs.nthu.edu.tw/files/40-1015-6969-1.php?Lang=zh-tw",
+          "一般": "http://web.cs.nthu.edu.tw/files/40-1015-63-1.php?Lang=zh-tw",
+          "大學部": "http://web.cs.nthu.edu.tw/files/40-1015-64-1.php?Lang=zh-tw",
+          "碩士班": "http://web.cs.nthu.edu.tw/files/40-1015-65-1.php?Lang=zh-tw",
+          "博士班": "http://web.cs.nthu.edu.tw/files/40-1015-66-1.php?Lang=zh-tw",
+          "工讀與徵才": "http://web.cs.nthu.edu.tw/files/40-1015-2779-1.php?Lang=zh-tw"
+        }
+      },
+      "EE": {
+        "abbr": "電機",
+        "url": {
+          "榮譽": "http://web.ee.nthu.edu.tw/files/40-1030-1683-1.php?Lang=zh-tw",
+          "演講": "http://web.ee.nthu.edu.tw/files/40-1030-2629-1.php?Lang=zh-tw",
+          "學士班": "http://web.ee.nthu.edu.tw/files/40-1030-58-1.php?Lang=zh-tw",
+          "競賽與徵才": "http://web.ee.nthu.edu.tw/files/40-1030-2905-1.php?Lang=zh-tw"
+        }
+      },
+      "IPTH": {
+        "abbr": "學院",
+        "url": {
+          "班內": "http://ipth.web.nthu.edu.tw/files/40-2032-6791-1.php?Lang=zh-tw",
+          "招生": "http://ipth.web.nthu.edu.tw/files/40-2032-6784-1.php?Lang=zh-tw",
+          "校外活動": "http://ipth.web.nthu.edu.tw/files/40-2032-6785-1.php?Lang=zh-tw"
+        }
+      },
+      "SS": {
+        "abbr": "運科",
+        "url": {
+          "活動": "http://dpe.web.nthu.edu.tw/files/40-2006-7-1.php?Lang=zh-tw",
+          "系務": "http://dpe.web.nthu.edu.tw/files/40-2006-6-1.php?Lang=zh-tw",
+          "徵才": "http://dpe.web.nthu.edu.tw/files/40-2006-4-1.php?Lang=zh-tw",
+          "工讀": "http://dpe.web.nthu.edu.tw/files/40-2006-20-1.php?Lang=zh-tw"
+        }
+      }
+    }
+  },
+  "NCTU": {
+    "abbr": "交大",
+    "dep": {
+      "CS": {
+        "abbr": "資工",
+        "url": {
+          "獎學金": "https://www.cs.nctu.edu.tw/announcements/scholarship",
+          "課程": "https://www.cs.nctu.edu.tw/announcements/courses",
+          "研究生": "https://www.cs.nctu.edu.tw/announcements/graduate",
+          "大學生": "https://www.cs.nctu.edu.tw/announcements/undergraduate",
+          "錄取": "https://www.cs.nctu.edu.tw/announcements/candidate",
+          "獲獎": "https://www.cs.nctu.edu.tw/announcements/awards",
+          "校內徵才": "https://www.cs.nctu.edu.tw/announcements/campus",
+          "企業徵才": "https://www.cs.nctu.edu.tw/announcements/corporation",
+          "計中": "https://www.cs.nctu.edu.tw/announcements/cscc",
+          "活動": "https://www.cs.nctu.edu.tw/announcements/activity"
+        }
+      },
+      "EE": {
+        "abbr": "電機",
+        "url": {
+          "一般": "https://www.dece.nctu.edu.tw/zh_tw/News/general",
+          "演講": "https://www.dece.nctu.edu.tw/zh_tw/News/lecture",
+          "熱門": "https://www.dece.nctu.edu.tw/zh_tw/News/HotNews",
+          "課程": "https://www.dece.nctu.edu.tw/zh_tw/News/Course",
+          "產業動態": "https://www.dece.nctu.edu.tw/zh_tw/News/Industry",
+          "競賽活動": "https://www.dece.nctu.edu.tw/zh_tw/News/Events",
+          "獎學金": "https://www.dece.nctu.edu.tw/zh_tw/News/Scholarship",
+          "榮譽榜": "https://www.dece.nctu.edu.tw/zh_tw/News/Honors",
+          "招生/徵才": "https://www.dece.nctu.edu.tw/zh_tw/News/Admissions",
+          "首頁-最新消息": "https://www.dece.nctu.edu.tw/zh_tw/News/newnews"
+        }
+      }
+    }
+  }
+}
