@@ -7,16 +7,16 @@ def NTHU_CS(office, ta_link):
     r = requests.get(ta_link)
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'lxml')
-    tables = soup.find_all(class_="mc")
+    tables = soup.find_all(class_="mbox")
 
     for announce in tables:
         try:
-            title = announce.find(class_='ptname').a.string
+            title = announce.find(class_='mtitle').a.string
             title = str(title).strip()
-            url = announce.find(class_='ptname').a.get('href')
-            data = announce.find(class_='date')
+            url = announce.find(class_='mtitle').a.get('href')
+            data = announce.find(class_='mdate before')
             if data is not None:
-                data = data.string.split()[1]
+                data = data.string.split()[0]
             print(title)
             News.objects.add(school='NTHU', dep='CS', category=office, title=title, url=url)
         except:
@@ -27,14 +27,14 @@ def NTHU_EE(office, ta_link):
     r = requests.get(ta_link)
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'lxml')
-    tables = soup.find_all(class_="mc")
+    tables = soup.find_all(class_="mbox")
 
     for announce in tables:
         try:
-            title = announce.find(class_='ptname').a.string
+            title = announce.find(class_='mtitle').a.string
             title = str(title).strip()
-            url = announce.find(class_='ptname').a.get('href')
-            data = announce.find(class_='date')
+            url = announce.find(class_='mtitle').a.get('href')
+            data = announce.find(class_='mdate before')
             if data is not None:
                 data = data.string.split()[1]
             print(title)
