@@ -43,6 +43,8 @@ python3 manage.py crawl nctu
 # 清空資料庫 table
 python3 manage.py clean_tables News
 
+# 傳送通知
+python3 manage.py send_msg
 ```
 
 
@@ -69,6 +71,15 @@ python3 manage.py clean_tables News
 ### 調整資料庫
 
 - `backend/models.py`
+
+## 部署（自動運行）
+
+將下面兩個指令放到 crontab 中。
+
+```bash
+python3 manage.py crawl nthu nctu
+python3 manage.py send_msg
+```
 
 ## TODO
 
