@@ -52,7 +52,7 @@ python3 manage.py send_msg
 
 ### Server Flows
 
-![](https://i.imgur.com/FzozhTL.png)
+![](/docs/workflow.png)
 
 
 ### 新增爬蟲
