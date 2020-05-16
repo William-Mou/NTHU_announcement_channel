@@ -73,7 +73,7 @@ python3 manage.py clean_tables News
 ## TODO
 
 - [ ] LINE Notify 機器人
-- [ ] Telegram Channel 機器人
+- [x] Telegram Channel 機器人
 - [ ] 註冊 LINE Notify 的網頁
 
 
