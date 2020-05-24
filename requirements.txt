@@ -1,0 +1,7 @@
+django>=2.2.6
+django-environ==0.4.5
+lxml==4.4.1
+bs4==0.0.1
+line-bot-sdk==1.8.0
+telepot==12.7
+requests
